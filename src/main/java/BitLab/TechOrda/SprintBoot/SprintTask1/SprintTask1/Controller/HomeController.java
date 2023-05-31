@@ -11,10 +11,10 @@ import java.util.ArrayList;
 @Controller
 public class HomeController {
 
-
     @GetMapping(value = "/home")
     public String indexPage(Model model){
         ArrayList<Student> students = DBManager.getStudents();
+
         model.addAttribute("students", students);
         return "index";
     }
@@ -23,6 +23,7 @@ public class HomeController {
     public String StudentPage(){
         return "add-student";
     }
+
 
     @PostMapping(value = "/addStudent")
     public String addStudent(Student student){
